@@ -1,0 +1,89 @@
+.login-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #FAF9F8;
+}
+
+.login-brand {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.login-brand h1 {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.login-brand p {
+  color: #666;
+  font-size: 15px;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 8px 24px;
+}
+
+.login-form label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.login-form input {
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.login-btn {
+  width: 100%;
+  margin-top: 12px;
+  background-color: #6C63FF;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 12px;
+}
+
+.login-btn:hover {
+  background-color: #584FF5;
+}
+
+.register-link {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.register-link a {
+  color: #6C63FF;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+.social-login {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.social-login p {
+  font-size: 13px;
+  color: #999;
+  margin-bottom: 12px;
+}
+
+.social-login a {
+  color: #6C63FF;
+  font-weight: 600;
+  text-decoration: none;
+}

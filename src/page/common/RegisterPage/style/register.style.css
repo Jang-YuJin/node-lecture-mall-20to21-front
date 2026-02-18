@@ -1,0 +1,66 @@
+.register-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #FAF9F8;
+}
+
+.register-form {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 8px 24px;
+}
+
+.register-brand {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.register-brand h1 {
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.register-brand p {
+  font-size: 15px;
+  color: #666;
+}
+
+.register-form {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 8px 24px;
+}
+
+.register-label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.role-hint {
+  font-size: 12px;
+  color: #999;
+  margin-top: 6px;
+}
+
+.register-btn {
+  width: 100%;
+  background-color: #6C63FF;
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.register-btn:hover {
+  background-color: #584FF5;
+}

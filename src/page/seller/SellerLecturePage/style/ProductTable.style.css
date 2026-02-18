@@ -1,0 +1,117 @@
+.lecture-table-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* 카드 한 줄 */
+.lecture-row {
+  display: flex;
+  gap: 16px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  align-items: center;
+}
+
+/* 썸네일 */
+.lecture-thumb img {
+  width: 110px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* 정보 영역 */
+.lecture-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.lecture-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2d3436;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* 메타 정보 */
+.lecture-meta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.price {
+  font-weight: 600;
+  color: #6c5ce7;
+}
+
+/* 카테고리 */
+.category-list {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.category-pill {
+  background: #f1f2ff;
+  color: #6c5ce7;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* 배지 */
+.badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.badge.discount {
+  background: #ffeaa7;
+  color: #d63031;
+}
+
+.badge.status.active {
+  background: #e0f7ea;
+  color: #00b894;
+}
+
+.badge.status.inactive {
+  background: #f1f2f6;
+  color: #636e72;
+}
+
+/* 버튼 */
+.lecture-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* 📱 모바일 대응 */
+@media (max-width: 768px) {
+  .lecture-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .lecture-actions {
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .lecture-thumb img {
+    width: 100%;
+    height: auto;
+  }
+}

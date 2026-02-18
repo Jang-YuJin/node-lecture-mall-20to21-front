@@ -1,0 +1,48 @@
+/* 전체 폼 */
+.cs-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* 섹션 */
+.cs-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cs-section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #343a40;
+}
+
+/* 배너 미리보기 */
+.cs-banner-preview {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* 라디오 그룹 */
+.cs-radio-group {
+  display: flex;
+  gap: 24px;
+}
+
+.cs-radio-group .form-check-label {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* 버튼 영역 */
+.cs-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}

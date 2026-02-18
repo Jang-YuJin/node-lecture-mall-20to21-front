@@ -1,0 +1,109 @@
+.cs-main-banner {
+  margin-bottom: 48px;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+/* 공통 슬라이드 */
+.banner-slide {
+  position: relative;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  color: white;
+  background-size: cover;
+  background-position: top;
+}
+
+/* 배너 배경 */
+.banner-1 {
+  background: linear-gradient(135deg, #0f172a, #334155);
+}
+
+.banner-content {
+  position: relative;
+  max-width: 520px;
+  z-index: 1;
+}
+
+.banner-content.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.banner-content h1 {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.banner-content p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+.banner-btn {
+  margin-top: 18px;
+  padding: 12px 22px;
+  font-weight: 600;
+  border-radius: 999px;
+  background-color: white;
+  color: #111827;
+  border: none;
+}
+
+.banner-empty {
+  background: radial-gradient(
+      circle at top left,
+      #334155,
+      #0f172a 60%
+    ),
+    linear-gradient(135deg, #0f172a, #020617);
+}
+
+.logo-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 24px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+}
+
+.banner-logo-emoji {
+  font-size: 34px;
+}
+
+.banner-logo-text strong {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.banner-logo-text div {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+/* 🔽 반응형 */
+@media (max-width: 768px) {
+  .banner-slide {
+    height: 300px;
+    padding: 24px;
+  }
+
+  .banner-content h1 {
+    font-size: 24px;
+  }
+
+  .banner-content p {
+    font-size: 14px;
+  }
+
+  .banner-logo-box {
+    padding: 12px 18px;
+  }
+}

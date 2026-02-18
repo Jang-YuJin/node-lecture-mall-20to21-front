@@ -1,0 +1,15 @@
+.codesnack-toast {
+  padding: 12px 14px;
+}
+
+.toast-title {
+  font-size: 14px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.toast-content {
+  font-size: 13px;
+  opacity: 0.9;
+}

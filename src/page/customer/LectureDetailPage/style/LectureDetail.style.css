@@ -1,0 +1,73 @@
+.product-info{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.product-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.product-price {
+  font-size: 1.25rem;
+  color: #111;
+  margin-bottom: 1rem;
+}
+
+.product-desc {
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.material-section {
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.material-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.material-btn {
+  border-radius: 999px;
+  padding: 6px 16px;
+}
+
+.warning-message {
+  color: #d9534f;
+  margin-bottom: 1rem;
+}
+
+.material-section {
+  padding: 12px 0;
+}
+
+.section-title {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.error-text {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #fa5252;
+}
+
+
+/* 📱 모바일 */
+@media (max-width: 768px) {
+  .product-info-area {
+    margin-top: 1rem;
+  }
+
+  .material-options {
+    gap: 0.4rem;
+  }
+}
