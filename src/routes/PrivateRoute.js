@@ -15,7 +15,12 @@ const PrivateRoute = ({ permissionLevel }) => {
   }
 
   if (permissionLevel === "customer") {
-    return user.lvl === "customer" ? <Outlet /> : <Navigate to="/" replace />;
+    const customerAllowedRoles = ["customer", "admin", "seller"];
+    return customerAllowedRoles.includes(user.lvl) ? (
+      <Outlet />
+    ) : (
+      <Navigate to="/" replace />
+    );
   }
 
   if (permissionLevel === "admin") {
