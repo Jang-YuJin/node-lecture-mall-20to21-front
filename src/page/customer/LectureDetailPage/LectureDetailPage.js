@@ -148,13 +148,13 @@ const LectureDetail = () => {
                   value="bind"
                   disabled={selectedLecture.txtbkStck?.bind <= 0}
                 >
-                  제본(스프링) 교재 ({currencyFormat(Number(selectedLecture.txtbkPrice.bind ?? 0))}원)
+                  제본(스프링) 교재 ({currencyFormat(Number(selectedLecture.txtbkPrice?.bind))}원)
                 </option>
                 <option
                   value="book"
                   disabled={selectedLecture.txtbkStck?.book <= 0}
                 >
-                  책 교재 ({currencyFormat(Number(selectedLecture.txtbkPrice.book ?? 0))}원)
+                  책 교재 ({currencyFormat(Number(selectedLecture.txtbkPrice?.book))}원)
                 </option>
               </select>
               {txtbkError && (
