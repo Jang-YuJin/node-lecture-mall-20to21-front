@@ -18,6 +18,11 @@ const LectureDetail = () => {
   const [txtbkError, setTxtbkError] = useState(false);
   const user = useSelector((state) => state.user.user);
   const navigate = useNavigate();
+  const isDiscounted = selectedLecture?.dscnt;
+  const discountRate = Number(selectedLecture?.dscntRt);
+  const discountedPrice = Math.floor(
+    selectedLecture?.price * (1 - discountRate * 0.01)
+  );
 
   const addItemToCart = () => {
     let hasError = false;
@@ -84,8 +89,24 @@ const LectureDetail = () => {
         </Col>
         <Col className="product-info-area" sm={6}>
           <div className="product-title">{selectedLecture.name}</div>
-          <div className="product-price">
-            ₩ {currencyFormat(selectedLecture.price)}
+          <div className="price-section">
+            {isDiscounted ? (
+              <div className="price-row">
+                <span className="discount-badge-detail">
+                  🔥 {discountRate}% OFF
+                </span>
+                <span className="original-price">
+                  ₩ {currencyFormat(selectedLecture.price)}
+                </span>
+                <span className="discounted-price">
+                  ₩ {currencyFormat(discountedPrice)}
+                </span>
+              </div>
+            ) : (
+              <div className="normal-price">
+                ₩ {currencyFormat(selectedLecture.price)}
+              </div>
+            )}
           </div>
           <div className="product-desc">{selectedLecture.desc}</div>
 
@@ -114,10 +135,9 @@ const LectureDetail = () => {
               )}
             </div>
           )}
-
           {selectedLecture.txtbkStck && (
             <div className={`material-section ${txtbkError ? "error" : ""}`}>
-              <div className="section-title">📦 실물 교재</div>
+              <div className="section-title">📚 실물 교재</div>
               <select
                 className={`form-select ${txtbkError ? "is-invalid" : ""}`}
                 value={selectedTxtbk}
@@ -128,13 +148,13 @@ const LectureDetail = () => {
                   value="bind"
                   disabled={selectedLecture.txtbkStck?.bind <= 0}
                 >
-                  제본(스프링) 교재
+                  제본(스프링) 교재 ({currencyFormat(Number(selectedLecture.txtbkPrice.bind))}원)
                 </option>
                 <option
                   value="book"
                   disabled={selectedLecture.txtbkStck?.book <= 0}
                 >
-                  책 교재
+                  책 교재 ({currencyFormat(Number(selectedLecture.txtbkPrice.book))}원)
                 </option>
               </select>
               {txtbkError && (
@@ -142,6 +162,7 @@ const LectureDetail = () => {
               )}
             </div>
           )}
+          
           <div>※ 강의 구매시 실물 교재는 1권만 배송됩니다.</div>
           <Button
             variant="dark"

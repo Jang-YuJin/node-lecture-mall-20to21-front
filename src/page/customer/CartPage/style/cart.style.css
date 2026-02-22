@@ -1,40 +1,123 @@
-.product-card-cart{
-    margin-bottom: 10px;
-}
-.qty-dropdown{
-    max-width:400px;
-}
-.trash-button{
-    background-color: white;
-    border: 1px solid gray;
-}
-.product-card-cart{
-    background-color: ghostwhite;
-    padding:10px;
-}
-.receipt-container{
-    border: 1px solid gray;
-    padding: 32px 24px;
-}
-.receipt-list{
-    list-style-type: none;
-    padding: 0;
-    border-bottom: 1px solid black;
+.cart-page {
+  background: #f8f9fa;
+  padding-top: 32px;
 }
 
-.receipt-list li{
-    padding-bottom: 10px;
+/* 카드 */
+.cart-item-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
 }
 
-.receipt-title{
-    margin-bottom: 20px;
+/* 이미지 */
+.cart-item-img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
 }
 
-.payment-button{
-   width: 100%;
-   padding: 16px;
-   margin-bottom: 20px;
+/* 헤더 */
+.cart-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.cart-item-header h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* 가격 */
+.cart-item-price {
+  margin: 8px 0;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* 옵션 */
+.cart-item-option {
+  font-size: 14px;
+  color: #495057;
+  margin-bottom: 4px;
+}
+
+/* 수량 */
+.qty-area {
+  margin-top: 12px;
+}
+
+.qty-dropdown {
+  max-width: 300px;
+  margin-top: 4px;
+}
+
+/* 삭제 버튼 */
+.trash-button {
+  background: none;
+  border: none;
+  color: #adb5bd;
+  cursor: pointer;
+}
+
+.trash-button:hover {
+  color: #fa5252;
+}
+
+
+
+.receipt-container {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 100px;
+}
+
+.receipt-title {
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.receipt-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.receipt-item {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  font-size: 14px;
+}
+
+.receipt-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  margin: 16px 0;
+}
+
+.payment-button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.receipt-desc {
+  margin-top: 16px;
+  font-size: 12px;
+  color: #868e96;
+}
+
 .text-align-center{
     text-align: center;
 }

@@ -4,27 +4,23 @@ import { Row, Col, Form } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDispatch } from "react-redux";
 import { currencyFormat } from "../../../../utils/number";
-import { updateQty, deleteCartItem } from "../../../../features/cart/cartSlice";
 const CartProductCard = ({ item }) => {
   const dispatch = useDispatch();
 
-  const handleQtyChange = (id, value) => {
-    dispatch(updateQty({ id, value }));
+  const handleChange = (id, value, key) => {
   };
 
   const deleteCart = (id) => {
-    dispatch(deleteCartItem(id));
   };
-
   return (
-    <div className="product-card-cart">
-      <Row>
-        <Col md={2} xs={12}>
-          <img src={item.productId.image} width={112} alt="product" />
+    <div className="cart-item-card">
+      <Row className="g-3 align-items-center">
+        <Col md={3} xs={12}>
+          <img src={item.lectureId.img} width={112} alt={item.lectureId.name} />
         </Col>
-        <Col md={10} xs={12}>
-          <div className="display-flex space-between">
-            <h3>{item.productId.name}</h3>
+        <Col md={9} xs={12}>
+          <div className="cart-item-header">
+            <h3>{item.lectureId.name}</h3>
             <button className="trash-button">
               <FontAwesomeIcon
                 icon={faTrash}
@@ -34,32 +30,66 @@ const CartProductCard = ({ item }) => {
             </button>
           </div>
 
-          <div>
-            <strong>₩ {currencyFormat(item.productId.price)}</strong>
+          <div className="cart-item-price">
+            <strong>₩ {currencyFormat(item.lectureId.price)}</strong>
           </div>
-          <div>Size: {item.size}</div>
-          <div>Total: ₩ {currencyFormat(item.productId.price * item.qty)}</div>
-          <div>
-            Quantity:
+
+          <div className="cart-item-option">
+            📁 파일 교재: 
             <Form.Select
               onChange={(event) =>
-                handleQtyChange(item._id, event.target.value)
+                handleChange(item._id, event.target.value, 'fileTxtbk')
+              }
+              required
+              defaultValue={item.fileTxtbk}
+              className="qty-dropdown"
+            >
+              {item.lectureId.fileTxtbk.map((item, i) => (
+                <option key={i + 1} value={item}>
+                  {item}
+                </option>
+              ))}
+            </Form.Select>
+          </div>
+          <div className="cart-item-option">
+            📚 실물 교재: 
+            <Form.Select
+              onChange={(event) =>
+                handleChange(item._id, event.target.value, 'txtbk')
+              }
+              required
+              defaultValue={item.txtbk}
+              className="qty-dropdown"
+            >
+              {Object.keys(item.lectureId.txtbkStck).map((bk, i) => (
+                <option key={i + 1} value={bk}>
+                  {bk === 'bind' ? '제본(스프링) 교재' : '책 교재'} (₩ {currencyFormat(Number(item.lectureId.txtbkPrice[bk]))})
+                </option>
+              ))}
+            </Form.Select>
+          </div>
+
+          <div className="cart-item-option">
+            📦 실물교재 수량:
+            <Form.Select
+              onChange={(event) =>
+                handleChange(item._id, event.target.value, 'qty')
               }
               required
               defaultValue={item.qty}
               className="qty-dropdown"
             >
-              <option value={1}>1</option>
-              <option value={2}>2</option>
-              <option value={3}>3</option>
-              <option value={4}>4</option>
-              <option value={5}>5</option>
-              <option value={6}>6</option>
-              <option value={7}>7</option>
-              <option value={8}>8</option>
-              <option value={9}>9</option>
-              <option value={10}>10</option>
+              {[...Array(10)].map((_, i) => (
+                <option key={i + 1} value={i + 1}>
+                  {i + 1}
+                </option>
+              ))}
             </Form.Select>
+          </div>
+
+          <div className="cart-item-option">
+            총 가격: 
+            <strong>₩ {currencyFormat(item.lectureId.price + item.lectureId.txtbkPrice[item.txtbk] * (item.qty - 1))}</strong>
           </div>
         </Col>
       </Row>
